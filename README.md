@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Todo App
 
 This is a simple Todo App built with Node.js, Express, MongoDB, and EJS for templating.
@@ -16,3 +17,6 @@ This is a simple Todo App built with Node.js, Express, MongoDB, and EJS for temp
 1. Clone the repository:
    ```bash
    git clone https://github.com/SemiuAdesina/todo-app.git
+=======
+# Todo-App
+>>>>>>> 01c897bce64057f8c114135d351a823e27728b50

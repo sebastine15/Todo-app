@@ -9,7 +9,6 @@ exports.register = async (req, res, next) => {
   
       // Check if username already exists
       const existingUser = await User.findOne({ username });
-  
       if (existingUser) {
         return res.render('register', { errorMessage: 'Username already exists', successMessage: null });
       }
@@ -21,9 +20,11 @@ exports.register = async (req, res, next) => {
       await User.create({ username, password: hashedPassword });
       console.log('User Created');
   
-      res.render('register', { successMessage: 'Registration successful! You can now login.', errorMessage: null });
+      // Redirect to login page after successful registration
+      return res.redirect('/users/login');
     } catch (err) {
-      res.render('register', { errorMessage: 'Error during registration. Please try again.', successMessage: null });
+      console.error('Error during registration:', err.message); // Log the error for debugging
+      return res.render('register', { errorMessage: 'Error during registration. Please try again.', successMessage: null });
     }
   };  
 

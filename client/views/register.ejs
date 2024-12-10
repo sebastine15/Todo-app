@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+
+    <!-- Display Success Message -->
+    <% if (typeof successMessage !== 'undefined' && successMessage) { %>
+        <p class="success-message"><%= successMessage %></p>
+    <% } %>
+
+    <!-- Display Error Message -->
+    <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+        <p class="error-message"><%= errorMessage %></p>
+    <% } %>
+
+    <form action="/users/register" method="POST">
+        <input type="text" name="username" placeholder="Username" class="styled-input" required>
+        <input type="password" name="password" placeholder="Password" class="styled-input" required>
+        <button type="submit" class="register-btn">Register</button>
+    </form>
+</body>
+</html>
+

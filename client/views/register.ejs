@@ -7,23 +7,37 @@
     <title>Register</title>
 </head>
 <body>
-    <h1>Register</h1>
+    <header>
+        <h1>Create Your Account</h1>
+        <p>Join us to get access to exclusive features</p>
+    </header>
 
-    <!-- Display Success Message -->
     <% if (typeof successMessage !== 'undefined' && successMessage) { %>
-        <p class="success-message"><%= successMessage %></p>
+        <div class="alert alert-success"><%= successMessage %></div>
     <% } %>
 
-    <!-- Display Error Message -->
     <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
-        <p class="error-message"><%= errorMessage %></p>
+        <div class="alert alert-error"><%= errorMessage %></div>
     <% } %>
 
-    <form action="/users/register" method="POST">
-        <input type="text" name="username" placeholder="Username" class="styled-input" required>
-        <input type="password" name="password" placeholder="Password" class="styled-input" required>
-        <button type="submit" class="register-btn">Register</button>
-    </form>
+    <main>
+        <form action="/users/register" method="POST" class="register-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" class="styled-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" class="styled-input" required>
+            </div>
+
+            <button type="submit" class="btn register-btn">Register</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Already have an account? <a href="/users/login">Login here</a></p>
+    </footer>
 </body>
 </html>
-
